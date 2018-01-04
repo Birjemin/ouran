@@ -53,8 +53,11 @@ vendor |...
 3.Repository和Service只能被对应模块中的Module调用，不能对外；
 4.跨模块调用只能调用模块的Module，不能调用模块里面其他对象
 ```
+## Location
+
+项目位置：[https://github.com/Birjemin/ouran](https://github.com/Birjemin/ouran)
+
+参考：[Flight](http://flightphp.com/)
 
 ## PS:
 flight还没有看完~~~~继续看吧
-
-
