@@ -9,15 +9,15 @@
 namespace App\Comps\Article;
 
 
-use App\Mapper\BaseMapper;
+use App\Transformer\BaseTransformer;
 use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ArticleMapper
+ * Class ArticleTransformer
  * @package App\Comps\Article
  */
-class ArticleMapper extends BaseMapper
+class ArticleTransformer extends BaseTransformer
 {
     /**
      * @param Article $model
@@ -25,7 +25,7 @@ class ArticleMapper extends BaseMapper
      *
      * @return array
      */
-    public function doMap(Model $model, $keys = [])
+    public function doTransformer(Model $model, $keys = [])
     {
         // TODO: Implement doMap() method.
         $res = [

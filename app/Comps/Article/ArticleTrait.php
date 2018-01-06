@@ -24,10 +24,10 @@ trait ArticleTrait
     }
 
     /**
-     * @return ArticleMapper
+     * @return ArticleTransformer
      */
-    public static function getArticleMapper()
+    public static function getArticleTransformer()
     {
-        return new ArticleMapper();
+        return new ArticleTransformer();
     }
 }
