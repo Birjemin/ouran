@@ -20,10 +20,13 @@ class ArticleController extends Controller
 {
     use ArticleTrait;
 
+    /**
+     * @return string
+     */
     public function index()
     {
         $res = self::getArticleModule()->getList();
-        $res = self::getArticleMapper()->map($res);
+        $res = self::getArticleTransformer()->transformer($res);
         return renderJson(true, $res, '返回成功');
     }
 }

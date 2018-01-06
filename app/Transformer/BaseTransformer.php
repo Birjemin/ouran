@@ -6,17 +6,17 @@
  * Date: 16/12/2017
  * Time: 1:34 AM
  */
-namespace App\Mapper;
+namespace App\Transformer;
 
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class BaseMapper
- * @package App\Mapper
+ * Class BaseTransformer
+ * @package App\Transformer
  */
-abstract class BaseMapper
+abstract class BaseTransformer
 {
     /**
      * @param $model
@@ -24,7 +24,7 @@ abstract class BaseMapper
      *
      * @return array
      */
-    public function map($model, $keys = [])
+    public function transformer($model, $keys = [])
     {
         //$model = $model->all();
         if ($model instanceof Model) {
@@ -38,7 +38,7 @@ abstract class BaseMapper
             return [];
         }
         return array_map(function (Model $model) use ($keys) {
-            return $this->doMap($model, $keys);
+            return $this->doTransformer($model, $keys);
         }, $model);
     }
 
@@ -48,5 +48,5 @@ abstract class BaseMapper
      *
      * @return mixed
      */
-    abstract function doMap(Model $model, $keys = []);
+    abstract function doTransformer(Model $model, $keys = []);
 }
